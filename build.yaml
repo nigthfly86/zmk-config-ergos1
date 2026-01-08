@@ -27,3 +27,6 @@ include:
   - board: nice_nano_v2
     shield: ergos1oe_right
     artifact-name: ergos1oe_right
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: settings_reset
