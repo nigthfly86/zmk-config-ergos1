@@ -138,7 +138,7 @@
         compatible = "zmk,physical-layout-position-map";
 
         layout_0 {
-            physical-layout = <&layout_0>;
+            physical-layout = <&ergos1oe_physical_layout>;
 
             /*
              * positions[] maps logical key positions -> index in the "keys =" array above.
