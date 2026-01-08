@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "ergo_s1_oe.dtsi"
+#include "ergos1oe.dtsi"
 
 &kscan0 {
     col-gpios
