@@ -1,0 +1,17 @@
+if SHIELD_ERGOS1OE_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "ergos1oe"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_ERGOS1OE_LEFT || SHIELD_ERGOS1OE_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
