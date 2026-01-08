@@ -54,110 +54,134 @@
          *  transform = <&default_transform>;
          */
 
-        keys =
-            /* ---------------- Row 1 (12): left 6, right 6 ---------------- */
-            <&key_physical_attrs U U LHX0 (0*U + ST0) 0 0 0>, /* = / Esc label in your map */
-            <&key_physical_attrs U U LHX1 (0*U + ST1) 0 0 0>,
-            <&key_physical_attrs U U LHX2 (0*U + ST2) 0 0 0>,
-            <&key_physical_attrs U U LHX3 (0*U + ST3) 0 0 0>,
-            <&key_physical_attrs U U LHX4 (0*U + ST4) 0 0 0>,
-            <&key_physical_attrs U U LHX5 (0*U + ST5) 0 0 0>,
+         keys  /*                     w   h    x    y     rot    rx    ry */
+            = <&key_physical_attrs 100 100  350    0       0     0     0>   /* 0 */
+            , <&key_physical_attrs 100 100 1500    0       0     0     0>   /* 1 */
+            , <&key_physical_attrs 100 100  250   13       0     0     0>   /* 2 */
+            , <&key_physical_attrs 100 100  450   13       0     0     0>   /* 3 */
+            , <&key_physical_attrs 100 100 1400   13       0     0     0>   /* 4 */
+            , <&key_physical_attrs 100 100 1600   13       0     0     0>   /* 5 */
+            , <&key_physical_attrs 100 100   50   25       0     0     0>   /* 6 */
+            , <&key_physical_attrs 100 100  550   25       0     0     0>   /* 7 */
+            , <&key_physical_attrs 100 100 1300   25       0     0     0>   /* 8 */
+            , <&key_physical_attrs 100 100 1800   25       0     0     0>   /* 9 */
+            , <&key_physical_attrs 100 100  150   38       0     0     0>   /* 10 */
+            , <&key_physical_attrs 100 100 1700   38       0     0     0>   /* 11 */
 
-            <&key_physical_attrs U U RHX0 (0*U + RST0) 0 0 0>,
-            <&key_physical_attrs U U RHX1 (0*U + RST1) 0 0 0>,
-            <&key_physical_attrs U U RHX2 (0*U + RST2) 0 0 0>,
-            <&key_physical_attrs U U RHX3 (0*U + RST3) 0 0 0>,
-            <&key_physical_attrs U U RHX4 (0*U + RST4) 0 0 0>,
-            <&key_physical_attrs U U RHX5 (0*U + RST5) 0 0 0>,
+            , <&key_physical_attrs 100 100  350  100       0     0     0>   /* 12 */
+            , <&key_physical_attrs 100 100 1500  100       0     0     0>   /* 13 */
+            , <&key_physical_attrs 100 100  250  113       0     0     0>   /* 14 */
+            , <&key_physical_attrs 100 100  450  113       0     0     0>   /* 15 */
+            , <&key_physical_attrs 100 100 1400  113       0     0     0>   /* 16 */
+            , <&key_physical_attrs 100 100 1600  113       0     0     0>   /* 17 */
+            , <&key_physical_attrs 100 100   50  125       0     0     0>   /* 18 */
+            , <&key_physical_attrs 100 100  550  125       0     0     0>   /* 19 */
+            , <&key_physical_attrs 100 100 1300  125       0     0     0>   /* 20 */
+            , <&key_physical_attrs 100 100 1800  125       0     0     0>   /* 21 */
+            , <&key_physical_attrs 100 100  150  138       0     0     0>   /* 22 */
+            , <&key_physical_attrs 100 100 1700  138       0     0     0>   /* 23 */
 
-            /* ---------------- Row 2 (12) ---------------- */
-            <&key_physical_attrs U U LHX0 (1*U + ST0) 0 0 0>,
-            <&key_physical_attrs U U LHX1 (1*U + ST1) 0 0 0>,
-            <&key_physical_attrs U U LHX2 (1*U + ST2) 0 0 0>,
-            <&key_physical_attrs U U LHX3 (1*U + ST3) 0 0 0>,
-            <&key_physical_attrs U U LHX4 (1*U + ST4) 0 0 0>,
-            <&key_physical_attrs U U LHX5 (1*U + ST5) 0 0 0>,
+            , <&key_physical_attrs 100 100  350  200       0     0     0>   /* 24 */
+            , <&key_physical_attrs 100 100 1500  200       0     0     0>   /* 25 */
+            , <&key_physical_attrs 100 100  250  213       0     0     0>   /* 26 */
+            , <&key_physical_attrs 100 100  450  213       0     0     0>   /* 27 */
+            , <&key_physical_attrs 100 100 1400  213       0     0     0>   /* 28 */
+            , <&key_physical_attrs 100 100 1600  213       0     0     0>   /* 29 */
+            , <&key_physical_attrs 100 100   50  225       0     0     0>   /* 30 */
+            , <&key_physical_attrs 100 100  550  225       0     0     0>   /* 31 */
+            , <&key_physical_attrs 100 100 1300  225       0     0     0>   /* 32 */
+            , <&key_physical_attrs 100 100 1800  225       0     0     0>   /* 33 */
+            , <&key_physical_attrs 100 100  150  238       0     0     0>   /* 34 */
+            , <&key_physical_attrs 100 100 1700  238       0     0     0>   /* 35 */
 
-            <&key_physical_attrs U U RHX0 (1*U + RST0) 0 0 0>,
-            <&key_physical_attrs U U RHX1 (1*U + RST1) 0 0 0>,
-            <&key_physical_attrs U U RHX2 (1*U + RST2) 0 0 0>,
-            <&key_physical_attrs U U RHX3 (1*U + RST3) 0 0 0>,
-            <&key_physical_attrs U U RHX4 (1*U + RST4) 0 0 0>,
-            <&key_physical_attrs U U RHX5 (1*U + RST5) 0 0 0>,
+            , <&key_physical_attrs 100 100  350  300       0     0     0>   /* 36 */
+            , <&key_physical_attrs 100 100 1500  300       0     0     0>   /* 37 */
+            , <&key_physical_attrs 100 100  250  313       0     0     0>   /* 38 */
+            , <&key_physical_attrs 100 100  450  313       0     0     0>   /* 39 */
+            , <&key_physical_attrs 100 100 1400  313       0     0     0>   /* 40 */
+            , <&key_physical_attrs 100 100 1600  313       0     0     0>   /* 41 */
+            , <&key_physical_attrs 100 100   50  325       0     0     0>   /* 42 */
+            , <&key_physical_attrs 100 100  550  325       0     0     0>   /* 43 */
+            , <&key_physical_attrs 100 100 1300  325       0     0     0>   /* 44 */
+            , <&key_physical_attrs 100 100 1800  325       0     0     0>   /* 45 */
+            , <&key_physical_attrs 100 100  150  338       0     0     0>   /* 46 */
+            , <&key_physical_attrs 100 100 1700  338       0     0     0>   /* 47 */
 
-            /* ---------------- Row 3 (12) ---------------- */
-            <&key_physical_attrs U U LHX0 (2*U + ST0) 0 0 0>,
-            <&key_physical_attrs U U LHX1 (2*U + ST1) 0 0 0>,
-            <&key_physical_attrs U U LHX2 (2*U + ST2) 0 0 0>,
-            <&key_physical_attrs U U LHX3 (2*U + ST3) 0 0 0>,
-            <&key_physical_attrs U U LHX4 (2*U + ST4) 0 0 0>,
-            <&key_physical_attrs U U LHX5 (2*U + ST5) 0 0 0>,
+            , <&key_physical_attrs 100 100  350  400       0     0     0>   /* 48 */
+            , <&key_physical_attrs 100 100 1500  400       0     0     0>   /* 49 */
+            , <&key_physical_attrs 100 100  250  413       0     0     0>   /* 50 */
+            , <&key_physical_attrs 100 100  450  413       0     0     0>   /* 51 */
+            , <&key_physical_attrs 100 100 1400  413       0     0     0>   /* 52 */
+            , <&key_physical_attrs 100 100 1600  413       0     0     0>   /* 53 */
+            , <&key_physical_attrs 100 100  150  438       0     0     0>   /* 54 */
+            , <&key_physical_attrs 100 100 1700  438       0     0     0>   /* 55 */
 
-            <&key_physical_attrs U U RHX0 (2*U + RST0) 0 0 0>,
-            <&key_physical_attrs U U RHX1 (2*U + RST1) 0 0 0>,
-            <&key_physical_attrs U U RHX2 (2*U + RST2) 0 0 0>,
-            <&key_physical_attrs U U RHX3 (2*U + RST3) 0 0 0>,
-            <&key_physical_attrs U U RHX4 (2*U + RST4) 0 0 0>,
-            <&key_physical_attrs U U RHX5 (2*U + RST5) 0 0 0>,
+            /* Left thumb cluster / inner (rotated) */
+            , <&key_physical_attrs 100 100  750  325    3000   650   425>   /* 56 */
+            , <&key_physical_attrs 100 100  850  325    3000   650   425>   /* 57 */
+            , <&key_physical_attrs 100 200  650  425    3000   650   425>   /* 58 */
+            , <&key_physical_attrs 100 200  750  425    3000   650   425>   /* 59 */
+            , <&key_physical_attrs 100 100  850  425    3000   650   425>   /* 60 */
+            , <&key_physical_attrs 100 100  850  525    3000   650   425>   /* 61 */
 
-            /* ---------------- Row 4 (16): left 6, inner 4, right 6 ---------------- */
-            <&key_physical_attrs U U LHX0 (3*U + ST0) 0 0 0>,
-            <&key_physical_attrs U U LHX1 (3*U + ST1) 0 0 0>,
-            <&key_physical_attrs U U LHX2 (3*U + ST2) 0 0 0>,
-            <&key_physical_attrs U U LHX3 (3*U + ST3) 0 0 0>,
-            <&key_physical_attrs U U LHX4 (3*U + ST4) 0 0 0>,
-            <&key_physical_attrs U U LHX5 (3*U + ST5) 0 0 0>,
-
-            /* Inner 4 keys (Ctrl/GUI/Alt/Ctrl region). Keep them compact. */
-            <&key_physical_attrs U U 650 315 0 0 0>,
-            <&key_physical_attrs U U 750 315 0 0 0>,
-            <&key_physical_attrs U U 850 315 0 0 0>,
-            <&key_physical_attrs U U 950 315 0 0 0>,
-
-            <&key_physical_attrs U U (RHX0+200) (3*U + RST0) 0 0 0>,
-            <&key_physical_attrs U U (RHX1+200) (3*U + RST1) 0 0 0>,
-            <&key_physical_attrs U U (RHX2+200) (3*U + RST2) 0 0 0>,
-            <&key_physical_attrs U U (RHX3+200) (3*U + RST3) 0 0 0>,
-            <&key_physical_attrs U U (RHX4+200) (3*U + RST4) 0 0 0>,
-            <&key_physical_attrs U U (RHX5+200) (3*U + RST5) 0 0 0>,
-
-            /* ---------------- Row 5 (14): left 4, middle 6, right 4 ---------------- */
-            /* Left bottom row (matches your photo: `~ Del ← → Bksp`): */
-            <&key_physical_attrs U U (LHX1-10) 430 0 0 0>, /* GRAVE */
-            <&key_physical_attrs U U (LHX2-10) 440 0 0 0>, /* DELETE */
-            <&key_physical_attrs U U (LHX3-10) 450 0 0 0>, /* LEFT  */
-            <&key_physical_attrs U U (LHX4-10) 450 0 0 0>, /* RIGHT */
-
-            /* Middle 6 (order from your keymap):
-            *   BACKSPACE, MO(1), HOME, PG_UP, ENTER, SPACE
-            *
-            * Photo-matching intent:
-            *   - BACKSPACE = left vertical 2u
-            *   - FN (MO1)  = right vertical 2u
-            *   - small key above them (we'll put ENTER here for now)
-            *   - HOME/PGUP as the right vertical pair (you can swap PGUP->END later if you prefer)
-            *   - SPACE as a small key between/near thumbs for now
-            */
-            <&key_physical_attrs U (2*U) 650 460 0 0 0>,   /* BACKSPACE 2u vertical (left) */
-            <&key_physical_attrs U (2*U) 760 460 0 0 0>,   /* MO(1) / FN 2u vertical (right) */
-
-            <&key_physical_attrs U U      705 420 0 0 0>,  /* HOME (small, above/between thumbs) */
-            <&key_physical_attrs U U      870 460 0 0 0>,  /* PG_UP (right column, top) */
-
-            <&key_physical_attrs U U      760 420 0 0 0>,  /* ENTER (small above right thumb) */
-            <&key_physical_attrs U U      870 560 0 0 0>,  /* SPACE (right column, bottom) */
-
-            /* Right bottom row 4 keys (mirror of left-bottom style) */
-            <&key_physical_attrs U U (RHX1+210) 450 0 0 0>,
-            <&key_physical_attrs U U (RHX2+210) 450 0 0 0>,
-            <&key_physical_attrs U U (RHX3+210) 440 0 0 0>,
-            <&key_physical_attrs U U (RHX4+210) 430 0 0 0>,
-
-            /* ---------------- Row 6 (2): remaining two keys (END, PG_DN in your map) ----------------
-             * Place them as a mirrored pair beneath the thumb area for now.
-             */
-            <&key_physical_attrs U U 760 590 0 0 0>,  /* END   */
-            <&key_physical_attrs U U 650 590 0 0 0>   /* PG_DN */
+            /* Right thumb cluster / inner (rotated, mirrored) */
+            , <&key_physical_attrs 100 100 1000  325 (-3000)  1300   425>   /* 62 */
+            , <&key_physical_attrs 100 100 1100  325 (-3000)  1300   425>   /* 63 */
+            , <&key_physical_attrs 100 100 1000  425 (-3000)  1300   425>   /* 64 */
+            , <&key_physical_attrs 100 200 1100  425 (-3000)  1300   425>   /* 65 */
+            , <&key_physical_attrs 100 200 1200  425 (-3000)  1300   425>   /* 66 */
+            , <&key_physical_attrs 100 100 1000  525 (-3000)  1300   425>   /* 67 */
             ;
+    };
+
+    position_map {
+        compatible = "zmk,physical-layout-position-map";
+
+        layout_0 {
+            physical-layout = <&layout_0>;
+
+            /*
+             * positions[] maps logical key positions -> index in the "keys =" array above.
+             * This preserves your original ZMK key order (keymap bindings order),
+             * while letting you keep the visual/geometry order you prefer in keys[].
+             *
+             * If your thumbs are swapped after this, we only need to swap a couple
+             * indices in the "Row 5 middle 6" section.
+             */
+            positions = <
+                /* Row 1 (logical 0-11): left 6, right 6 */
+                6 10 2 0 3 7     8 4 1 5 11 9
+
+                /* Row 2 (12-23) */
+                18 22 14 12 15 19     20 16 13 17 23 21
+
+                /* Row 3 (24-35) */
+                30 34 26 24 27 31     32 28 25 29 35 33
+
+                /* Row 4 left 6 (36-41) */
+                42 46 38 36 39 43
+
+                /* Row 4 center 4 (42-45) */
+                56 57 62 63
+
+                /* Row 4 right 6 (46-51) */
+                44 40 37 41 47 45
+
+                /* Row 5 left 4 (52-55) */
+                54 50 48 51
+
+                /* Row 5 middle 6 (56-61)
+                 * logical order: BACKSPACE, FN(MO1), HOME, PG_UP, ENTER, SPACE
+                 * Best-effort mapping to your rotated cluster indices:
+                 */
+                58 59 56 57 60 61
+
+                /* Row 5 right 4 (62-65) */
+                52 49 53 55
+
+                /* Row 6 (66-67) */
+                64 67
+            >;
+        };
     };
 };
