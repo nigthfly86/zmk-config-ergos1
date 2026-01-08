@@ -1,187 +1,111 @@
 #include <physical_layouts.dtsi>
 
-/*
- * Notes:
- * - 100 units = 1.0u
- * - key_physical_attrs: <w h x y r rx ry>
- * - This file keeps your original key order (from your keymap bindings list).
- */
-
-#define U 100
-
-/* Simple stagger profile for the 6 alpha columns (pinky -> inner).
- * (Higher y = lower on screen)
- * Tuned to resemble your photo: pinky lower, middle/index higher.
- */
-#define ST0  25   /* pinky */
-#define ST1  10   /* ring  */
-#define ST2   0   /* middle */
-#define ST3   0   /* index  */
-#define ST4  10   /* inner */
-#define ST5  25   /* inner-most */
-
-#define LHX0  (0*U)
-#define LHX1  (1*U)
-#define LHX2  (2*U)
-#define LHX3  (3*U)
-#define LHX4  (4*U)
-#define LHX5  (5*U)
-
-/* Right half mirror start */
-#define RHX  900
-#define RHX0 (RHX + 0*U)
-#define RHX1 (RHX + 1*U)
-#define RHX2 (RHX + 2*U)
-#define RHX3 (RHX + 3*U)
-#define RHX4 (RHX + 4*U)
-#define RHX5 (RHX + 5*U)
-
-#define RST0 ST5
-#define RST1 ST4
-#define RST2 ST3
-#define RST3 ST2
-#define RST4 ST1
-#define RST5 ST0
-
 / {
     ergos1oe_physical_layout: ergos1oe_physical_layout {
         compatible = "zmk,physical-layout";
-        display-name = "ergos1oe (photo-ish)";
+        display-name = "ergos1oe (ordered)";
 
         /*
-         * You already set these in the overlay:
-         *  kscan = <&kscan0>;
-         *  transform = <&default_transform>;
+         * NOTE:
+         * The order of `keys = ...` MUST match the keymap bindings order.
+         * This list is now ordered logically (row by row), using your exact geometry.
          */
 
-         keys  /*                     w   h    x    y     rot    rx    ry */
-            = <&key_physical_attrs 100 100  350    0       0     0     0>   /* 0 */
-            , <&key_physical_attrs 100 100 1500    0       0     0     0>   /* 1 */
-            , <&key_physical_attrs 100 100  250   13       0     0     0>   /* 2 */
-            , <&key_physical_attrs 100 100  450   13       0     0     0>   /* 3 */
-            , <&key_physical_attrs 100 100 1400   13       0     0     0>   /* 4 */
-            , <&key_physical_attrs 100 100 1600   13       0     0     0>   /* 5 */
-            , <&key_physical_attrs 100 100   50   25       0     0     0>   /* 6 */
-            , <&key_physical_attrs 100 100  550   25       0     0     0>   /* 7 */
-            , <&key_physical_attrs 100 100 1300   25       0     0     0>   /* 8 */
-            , <&key_physical_attrs 100 100 1800   25       0     0     0>   /* 9 */
-            , <&key_physical_attrs 100 100  150   38       0     0     0>   /* 10 */
-            , <&key_physical_attrs 100 100 1700   38       0     0     0>   /* 11 */
+        keys = <
+            /* ================= Row 1 (12): left 6, right 6 ================= */
+            /* left: = 1 2 3 4 5 */
+            &key_physical_attrs 100 100   50   25      0     0     0  /* idx 6  */
+            &key_physical_attrs 100 100  150   38      0     0     0  /* idx 10 */
+            &key_physical_attrs 100 100  250   13      0     0     0  /* idx 2  */
+            &key_physical_attrs 100 100  350    0      0     0     0  /* idx 0  */
+            &key_physical_attrs 100 100  450   13      0     0     0  /* idx 3  */
+            &key_physical_attrs 100 100  550   25      0     0     0  /* idx 7  */
 
-            , <&key_physical_attrs 100 100  350  100       0     0     0>   /* 12 */
-            , <&key_physical_attrs 100 100 1500  100       0     0     0>   /* 13 */
-            , <&key_physical_attrs 100 100  250  113       0     0     0>   /* 14 */
-            , <&key_physical_attrs 100 100  450  113       0     0     0>   /* 15 */
-            , <&key_physical_attrs 100 100 1400  113       0     0     0>   /* 16 */
-            , <&key_physical_attrs 100 100 1600  113       0     0     0>   /* 17 */
-            , <&key_physical_attrs 100 100   50  125       0     0     0>   /* 18 */
-            , <&key_physical_attrs 100 100  550  125       0     0     0>   /* 19 */
-            , <&key_physical_attrs 100 100 1300  125       0     0     0>   /* 20 */
-            , <&key_physical_attrs 100 100 1800  125       0     0     0>   /* 21 */
-            , <&key_physical_attrs 100 100  150  138       0     0     0>   /* 22 */
-            , <&key_physical_attrs 100 100 1700  138       0     0     0>   /* 23 */
+            /* right: 6 7 8 9 0 - */
+            &key_physical_attrs 100 100 1300   25      0     0     0  /* idx 8  */
+            &key_physical_attrs 100 100 1400   13      0     0     0  /* idx 4  */
+            &key_physical_attrs 100 100 1500    0      0     0     0  /* idx 1  */
+            &key_physical_attrs 100 100 1600   13      0     0     0  /* idx 5  */
+            &key_physical_attrs 100 100 1700   38      0     0     0  /* idx 11 */
+            &key_physical_attrs 100 100 1800   25      0     0     0  /* idx 9  */
 
-            , <&key_physical_attrs 100 100  350  200       0     0     0>   /* 24 */
-            , <&key_physical_attrs 100 100 1500  200       0     0     0>   /* 25 */
-            , <&key_physical_attrs 100 100  250  213       0     0     0>   /* 26 */
-            , <&key_physical_attrs 100 100  450  213       0     0     0>   /* 27 */
-            , <&key_physical_attrs 100 100 1400  213       0     0     0>   /* 28 */
-            , <&key_physical_attrs 100 100 1600  213       0     0     0>   /* 29 */
-            , <&key_physical_attrs 100 100   50  225       0     0     0>   /* 30 */
-            , <&key_physical_attrs 100 100  550  225       0     0     0>   /* 31 */
-            , <&key_physical_attrs 100 100 1300  225       0     0     0>   /* 32 */
-            , <&key_physical_attrs 100 100 1800  225       0     0     0>   /* 33 */
-            , <&key_physical_attrs 100 100  150  238       0     0     0>   /* 34 */
-            , <&key_physical_attrs 100 100 1700  238       0     0     0>   /* 35 */
+            /* ================= Row 2 (12) ================= */
+            &key_physical_attrs 100 100   50  125      0     0     0  /* idx 18 */
+            &key_physical_attrs 100 100  150  138      0     0     0  /* idx 22 */
+            &key_physical_attrs 100 100  250  113      0     0     0  /* idx 14 */
+            &key_physical_attrs 100 100  350  100      0     0     0  /* idx 12 */
+            &key_physical_attrs 100 100  450  113      0     0     0  /* idx 15 */
+            &key_physical_attrs 100 100  550  125      0     0     0  /* idx 19 */
 
-            , <&key_physical_attrs 100 100  350  300       0     0     0>   /* 36 */
-            , <&key_physical_attrs 100 100 1500  300       0     0     0>   /* 37 */
-            , <&key_physical_attrs 100 100  250  313       0     0     0>   /* 38 */
-            , <&key_physical_attrs 100 100  450  313       0     0     0>   /* 39 */
-            , <&key_physical_attrs 100 100 1400  313       0     0     0>   /* 40 */
-            , <&key_physical_attrs 100 100 1600  313       0     0     0>   /* 41 */
-            , <&key_physical_attrs 100 100   50  325       0     0     0>   /* 42 */
-            , <&key_physical_attrs 100 100  550  325       0     0     0>   /* 43 */
-            , <&key_physical_attrs 100 100 1300  325       0     0     0>   /* 44 */
-            , <&key_physical_attrs 100 100 1800  325       0     0     0>   /* 45 */
-            , <&key_physical_attrs 100 100  150  338       0     0     0>   /* 46 */
-            , <&key_physical_attrs 100 100 1700  338       0     0     0>   /* 47 */
+            &key_physical_attrs 100 100 1300  125      0     0     0  /* idx 20 */
+            &key_physical_attrs 100 100 1400  113      0     0     0  /* idx 16 */
+            &key_physical_attrs 100 100 1500  100      0     0     0  /* idx 13 */
+            &key_physical_attrs 100 100 1600  113      0     0     0  /* idx 17 */
+            &key_physical_attrs 100 100 1700  138      0     0     0  /* idx 23 */
+            &key_physical_attrs 100 100 1800  125      0     0     0  /* idx 21 */
 
-            , <&key_physical_attrs 100 100  350  400       0     0     0>   /* 48 */
-            , <&key_physical_attrs 100 100 1500  400       0     0     0>   /* 49 */
-            , <&key_physical_attrs 100 100  250  413       0     0     0>   /* 50 */
-            , <&key_physical_attrs 100 100  450  413       0     0     0>   /* 51 */
-            , <&key_physical_attrs 100 100 1400  413       0     0     0>   /* 52 */
-            , <&key_physical_attrs 100 100 1600  413       0     0     0>   /* 53 */
-            , <&key_physical_attrs 100 100  150  438       0     0     0>   /* 54 */
-            , <&key_physical_attrs 100 100 1700  438       0     0     0>   /* 55 */
+            /* ================= Row 3 (12) ================= */
+            &key_physical_attrs 100 100   50  225      0     0     0  /* idx 30 */
+            &key_physical_attrs 100 100  150  238      0     0     0  /* idx 34 */
+            &key_physical_attrs 100 100  250  213      0     0     0  /* idx 26 */
+            &key_physical_attrs 100 100  350  200      0     0     0  /* idx 24 */
+            &key_physical_attrs 100 100  450  213      0     0     0  /* idx 27 */
+            &key_physical_attrs 100 100  550  225      0     0     0  /* idx 31 */
 
-            /* Left thumb cluster / inner (rotated) */
-            , <&key_physical_attrs 100 100  750  325    3000   650   425>   /* 56 */
-            , <&key_physical_attrs 100 100  850  325    3000   650   425>   /* 57 */
-            , <&key_physical_attrs 100 200  650  425    3000   650   425>   /* 58 */
-            , <&key_physical_attrs 100 200  750  425    3000   650   425>   /* 59 */
-            , <&key_physical_attrs 100 100  850  425    3000   650   425>   /* 60 */
-            , <&key_physical_attrs 100 100  850  525    3000   650   425>   /* 61 */
+            &key_physical_attrs 100 100 1300  225      0     0     0  /* idx 32 */
+            &key_physical_attrs 100 100 1400  213      0     0     0  /* idx 28 */
+            &key_physical_attrs 100 100 1500  200      0     0     0  /* idx 25 */
+            &key_physical_attrs 100 100 1600  213      0     0     0  /* idx 29 */
+            &key_physical_attrs 100 100 1700  238      0     0     0  /* idx 35 */
+            &key_physical_attrs 100 100 1800  225      0     0     0  /* idx 33 */
 
-            /* Right thumb cluster / inner (rotated, mirrored) */
-            , <&key_physical_attrs 100 100 1000  325 (-3000)  1300   425>   /* 62 */
-            , <&key_physical_attrs 100 100 1100  325 (-3000)  1300   425>   /* 63 */
-            , <&key_physical_attrs 100 100 1000  425 (-3000)  1300   425>   /* 64 */
-            , <&key_physical_attrs 100 200 1100  425 (-3000)  1300   425>   /* 65 */
-            , <&key_physical_attrs 100 200 1200  425 (-3000)  1300   425>   /* 66 */
-            , <&key_physical_attrs 100 100 1000  525 (-3000)  1300   425>   /* 67 */
-            ;
-    };
+            /* ================= Row 4 (16): left 6, center 4, right 6 ================= */
+            &key_physical_attrs 100 100   50  325      0     0     0  /* idx 42 */
+            &key_physical_attrs 100 100  150  338      0     0     0  /* idx 46 */
+            &key_physical_attrs 100 100  250  313      0     0     0  /* idx 38 */
+            &key_physical_attrs 100 100  350  300      0     0     0  /* idx 36 */
+            &key_physical_attrs 100 100  450  313      0     0     0  /* idx 39 */
+            &key_physical_attrs 100 100  550  325      0     0     0  /* idx 43 */
 
-    position_map {
-        compatible = "zmk,physical-layout-position-map";
+            /* center 4 (your rotated “inner” keys) */
+            &key_physical_attrs 100 100  750  325   3000   650   425  /* idx 56 */
+            &key_physical_attrs 100 100  850  325   3000   650   425  /* idx 57 */
+            &key_physical_attrs 100 100 1000  325 (-3000) 1300   425  /* idx 62 */
+            &key_physical_attrs 100 100 1100  325 (-3000) 1300   425  /* idx 63 */
 
-        layout_0 {
-            physical-layout = <&ergos1oe_physical_layout>;
+            &key_physical_attrs 100 100 1300  325      0     0     0  /* idx 44 */
+            &key_physical_attrs 100 100 1400  313      0     0     0  /* idx 40 */
+            &key_physical_attrs 100 100 1500  300      0     0     0  /* idx 37 */
+            &key_physical_attrs 100 100 1600  313      0     0     0  /* idx 41 */
+            &key_physical_attrs 100 100 1700  338      0     0     0  /* idx 47 */
+            &key_physical_attrs 100 100 1800  325      0     0     0  /* idx 45 */
 
-            /*
-             * positions[] maps logical key positions -> index in the "keys =" array above.
-             * This preserves your original ZMK key order (keymap bindings order),
-             * while letting you keep the visual/geometry order you prefer in keys[].
-             *
-             * If your thumbs are swapped after this, we only need to swap a couple
-             * indices in the "Row 5 middle 6" section.
+            /* ================= Row 5 (14): left 4, middle 6, right 4 ================= */
+            /* left 4 */
+            &key_physical_attrs 100 100  150  438      0     0     0  /* idx 54 */
+            &key_physical_attrs 100 100  250  413      0     0     0  /* idx 50 */
+            &key_physical_attrs 100 100  350  400      0     0     0  /* idx 48 */
+            &key_physical_attrs 100 100  450  413      0     0     0  /* idx 51 */
+
+            /* middle 6 (your thumbs / nav cluster)
+             * order: BACKSPACE, FN, HOME, PG_UP, ENTER, SPACE
              */
-            positions = <
-                /* Row 1 (logical 0-11): left 6, right 6 */
-                6 10 2 0 3 7     8 4 1 5 11 9
+            &key_physical_attrs 100 200  650  425   3000   650   425  /* idx 58 */
+            &key_physical_attrs 100 200  750  425   3000   650   425  /* idx 59 */
+            &key_physical_attrs 100 100  850  425   3000   650   425  /* idx 60 */
+            &key_physical_attrs 100 100  850  525   3000   650   425  /* idx 61 */
+            &key_physical_attrs 100 100 1000  425 (-3000) 1300   425  /* idx 64 */
+            &key_physical_attrs 100 100 1000  525 (-3000) 1300   425  /* idx 67 */
 
-                /* Row 2 (12-23) */
-                18 22 14 12 15 19     20 16 13 17 23 21
+            /* right 4 */
+            &key_physical_attrs 100 100 1400  413      0     0     0  /* idx 52 */
+            &key_physical_attrs 100 100 1500  400      0     0     0  /* idx 49 */
+            &key_physical_attrs 100 100 1600  413      0     0     0  /* idx 53 */
+            &key_physical_attrs 100 100 1700  438      0     0     0  /* idx 55 */
 
-                /* Row 3 (24-35) */
-                30 34 26 24 27 31     32 28 25 29 35 33
-
-                /* Row 4 left 6 (36-41) */
-                42 46 38 36 39 43
-
-                /* Row 4 center 4 (42-45) */
-                56 57 62 63
-
-                /* Row 4 right 6 (46-51) */
-                44 40 37 41 47 45
-
-                /* Row 5 left 4 (52-55) */
-                54 50 48 51
-
-                /* Row 5 middle 6 (56-61)
-                 * logical order: BACKSPACE, FN(MO1), HOME, PG_UP, ENTER, SPACE
-                 * Best-effort mapping to your rotated cluster indices:
-                 */
-                58 59 56 57 60 61
-
-                /* Row 5 right 4 (62-65) */
-                52 49 53 55
-
-                /* Row 6 (66-67) */
-                64 67
-            >;
-        };
+            /* ================= Row 6 (2): END, PG_DN ================= */
+            &key_physical_attrs 100 200 1100  425 (-3000) 1300   425  /* idx 65 */
+            &key_physical_attrs 100 200 1200  425 (-3000) 1300   425  /* idx 66 */
+        >;
     };
 };
